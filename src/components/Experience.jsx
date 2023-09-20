@@ -1,4 +1,4 @@
-import { experience } from "./Data"
+import { experience, addExperience } from "./Data"
 import { InputModule } from "./Components";
 
 export function Experience() {
@@ -7,6 +7,7 @@ export function Experience() {
       title='Experience'
       list={experience}
       add={true}
+      addFxn = {addExperience}
     />
   )
 }
