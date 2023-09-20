@@ -6,6 +6,7 @@ export function Education() {
     <InputModule 
       title='Education'
       list={education}
+      add={true}
     />
   )
 }

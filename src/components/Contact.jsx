@@ -6,6 +6,7 @@ export function Contact() {
     <InputModule 
       title='Contact Info'
       list={contact}
+      add={false}
     />
   )
 }

@@ -6,6 +6,7 @@ export function Experience() {
     <InputModule 
       title='Experience'
       list={experience}
+      add={true}
     />
   )
 }
