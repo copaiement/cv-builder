@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { InputModule, Buttons } from "./Components";
-import { experience, addExperience, removeExperience } from "./Data";
+import { InputModule } from "./Components";
+import { experience, addExperience } from "./Data";
+
 
 export function Experience() {
   const [expList, setExpList] = useState(experience)
 
   // move function to add a new list here
+  // Create Experience array
 
   // change single InputModule call to a map function
 
@@ -14,6 +16,7 @@ export function Experience() {
   function handleAddExp() {
     addExperience(experience.length);
     setExpList(experience);
+    console.log(experience)
   }
 
   // function handleRemoveExp() {
@@ -22,19 +25,16 @@ export function Experience() {
   // }
 
   return (
-    <div>
+    <div className='Experience'>
       {expList.map((exp, index) => (
         <InputModule
-          key={index} 
+          key={index}
           title='Experience'
           list={exp}
-          //removeFxn={handleRemoveExp(index)}
+          add={true}
+          addFxn={handleAddExp}
         />
       ))}
-      <Buttons 
-        add={true}
-        addFxn={handleAddExp}
-      />
     </div>
   )
 }

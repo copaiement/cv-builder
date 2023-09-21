@@ -1,18 +1,19 @@
-export function InputModule({ title, list }) {
+export function InputModule({ title, list, add, addFxn }) {
   return (
-    <div className={createClass(title)}>
-      <div className='inputs'>
-        <div className='inputHeader'>{title}</div>
-        {list.map(item => (
-          <Inputs
-            key={item.field} 
-            name={item.field}
-            value={item.value}
-            type={item.type}
-          />
-        ))}
-      </div>
-      
+    <div className='inputs'>
+      <div className='inputHeader'>{title}</div>
+      {list.map(item => (
+        <Inputs
+          key={item.field} 
+          name={item.field}
+          value={item.value}
+          type={item.type}
+        />
+      ))}
+      <Buttons 
+        add={add}
+        addFxn={addFxn}
+      />
     </div>
   )
 }
@@ -45,8 +46,4 @@ export function Buttons({ add, addFxn }) {
       <button>Submit</button>
     </div>
   )
-}
-
-function createClass(sectionName) {
-  return (sectionName.replace(/\s/g, '').toLowerCase());
 }
