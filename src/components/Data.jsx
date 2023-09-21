@@ -37,33 +37,8 @@ export const contact = [{
 ];
 
 
-export let experience = [[{
-  id: 'EX00',
-  field: 'Employer',
-  data: '',
-  type: 'text'
-}, {
-  id: 'EX01',
-  field: 'Position Title',
-  data: '',
-  type: 'text'
-}, {
-  id: 'EX04',
-  field: 'Job Description',
-  data: '',
-  type: 'text'
-}, {
-  id: 'EX05',
-  field: 'Start Date',
-  data: '',
-  type: 'date'
-}, {
-  id: 'EX06',
-  field: 'End Date',
-  data: '',
-  type: 'date'
-}
-]];
+export let experience = [];
+addExperience(0);
 
 // Function to add another Experience section to array
 export function addExperience(id) {
@@ -103,18 +78,29 @@ export function addExperience(id) {
   
 // }
 
-export const education = [{
-  field: 'School Name',
-  data: '',
-  type: 'text'
-}, {
-  field: 'Degree',
-  data: '',
-  type: 'text'
-}, {
-  field: 'Graduated',
-  data: '',
-  type: 'month'
+export let education = [];
+addEducation(0);
+
+// Function to add another Education section to array
+export function addEducation(id) {
+  const newEdu = [{
+    id: 'ED'+id+'0',
+    field: 'School Name',
+    data: '',
+    type: 'text'
+  }, {
+    id: 'ED'+id+'1',
+    field: 'Degree',
+    data: '',
+    type: 'text'
+  }, {
+    id: 'ED'+id+'2',
+    field: 'Graduated',
+    data: '',
+    type: 'month'
+  }];
+  
+  // use spread instead of push to trigger repaint
+  education = [...education, newEdu];
 }
-];
 
