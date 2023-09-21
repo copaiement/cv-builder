@@ -1,28 +1,40 @@
 import { useState } from "react";
-import { experience, addExperience } from "./Data"
-import { InputModule } from "./Components";
+import { InputModule, Buttons } from "./Components";
+import { experience, addExperience, removeExperience } from "./Data";
 
 export function Experience() {
   const [expList, setExpList] = useState(experience)
 
   // move function to add a new list here
 
-  // remove original list and create in Data with a function (and and ID)
-
-  // update state with button
-
-  // pass through function for button
-
   // change single InputModule call to a map function
 
   // move buttons creation to after inputs instead of inside 
 
+  function handleAddExp() {
+    addExperience(experience.length);
+    setExpList(experience);
+  }
+
+  // function handleRemoveExp() {
+  //   removeExperience(id);
+  //   setExpList(experience);
+  // }
+
   return (
-    <InputModule 
-      title='Experience'
-      list={experience}
-      add={true}
-      addFxn = {addExperience}
-    />
+    <div>
+      {expList.map((exp, index) => (
+        <InputModule
+          key={index} 
+          title='Experience'
+          list={exp}
+          //removeFxn={handleRemoveExp(index)}
+        />
+      ))}
+      <Buttons 
+        add={true}
+        addFxn={handleAddExp}
+      />
+    </div>
   )
 }

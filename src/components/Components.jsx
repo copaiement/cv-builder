@@ -1,4 +1,4 @@
-export function InputModule({ title, list, add }) {
+export function InputModule({ title, list }) {
   return (
     <div className={createClass(title)}>
       <div className='inputs'>
@@ -12,9 +12,7 @@ export function InputModule({ title, list, add }) {
           />
         ))}
       </div>
-      <Buttons 
-        add={add}
-      />
+      
     </div>
   )
 }
@@ -32,11 +30,11 @@ function Inputs({ name, value, type, handleChange }) {
   )
 }
 
-function Buttons({ add }) {
+export function Buttons({ add, addFxn }) {
   if (add) {
     return (
       <div className='buttons'>
-        <button>Add</button>
+        <button onClick={addFxn} >Add</button>
         <button>Submit</button>
       </div>
     )

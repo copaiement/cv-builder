@@ -36,34 +36,11 @@ export const contact = [{
 }
 ];
 
-export const experience = [{
-  id: 'EX00',
-  field: 'Employer',
-  data: '',
-  type: 'text'
-}, {
-  id: 'EX01',
-  field: 'Position Title',
-  data: '',
-  type: 'text'
-}, {
-  id: 'EX04',
-  field: 'Job Description',
-  data: '',
-  type: 'text'
-}, {
-  id: 'EX05',
-  field: 'Start Date',
-  data: '',
-  type: 'date'
-}, {
-  id: 'EX06',
-  field: 'End Date',
-  data: '',
-  type: 'date'
-}
-];
+// Create Experience array
+export const experience = [];
+addExperience(0);
 
+// Function to add another Experience section to array
 export function addExperience(id) {
   const newExp = [{
     id: 'EX'+id+'0',
@@ -93,6 +70,11 @@ export function addExperience(id) {
   }];
 
   experience.push(newExp);
+}
+
+// Function to remove an Experience section from array
+export function removeExperience(id) {
+  
 }
 
 export const education = [{
