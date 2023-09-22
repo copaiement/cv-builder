@@ -1,0 +1,7 @@
+For next time:
+
+Update Lists with a GROUPNAME so that they can be filtered to remove
+
+Fix handleRemoveExp function and corresponding functions
+
+Use Experience logic to update Education

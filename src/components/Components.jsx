@@ -1,18 +1,19 @@
-export function InputModule({ title, list, add, addFxn }) {
+import { generateKey } from "./KeyGen"
+
+export function InputModule({ title, list, rmvFxn }) {
   return (
     <div className='inputs'>
       <div className='inputHeader'>{title}</div>
       {list.map(item => (
         <Inputs
-          key={item.field} 
+          key={generateKey} 
           name={item.field}
           value={item.value}
           type={item.type}
         />
       ))}
-      <Buttons 
-        add={add}
-        addFxn={addFxn}
+      <RemoveButton 
+          rmvFxn={rmvFxn}
       />
     </div>
   )
@@ -34,7 +35,7 @@ function Inputs({ name, value, type, handleChange }) {
 export function Buttons({ add, addFxn }) {
   if (add) {
     return (
-      <div className='buttons'>
+      <div className='inputButtons'>
         <button onClick={addFxn} >Add</button>
         <button>Submit</button>
       </div>
@@ -42,8 +43,18 @@ export function Buttons({ add, addFxn }) {
   }
 
   return (
-    <div className='buttons'>
+    <div className='inputButtons'>
       <button>Submit</button>
     </div>
   )
 }
+
+function RemoveButton({ rmvFxn }) {
+  return (
+    <div className='removeBtn'>
+      <button onClick={rmvFxn}>Remove</button>
+    </div>
+  )
+}
+
+

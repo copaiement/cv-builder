@@ -41,9 +41,10 @@ export let experience = [];
 addExperience(0);
 
 // Function to add another Experience section to array
-export function addExperience(id) {
+export function addExperience(group) {
   const newExp = [{
-    id: 'EX'+id+'0',
+    group: group,
+    id: '0',
     field: 'Employer',
     data: '',
     type: 'text'
@@ -74,9 +75,9 @@ export function addExperience(id) {
 }
 
 // Function to remove an Experience section from array
-// export function removeExperience(id) {
-  
-// }
+export function removeExperience(exp) {
+  return experience.filter((obj) => obj !== exp)
+}
 
 export let education = [];
 addEducation(0);
