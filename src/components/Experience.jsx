@@ -15,21 +15,22 @@ export function Experience() {
   // move buttons creation to after inputs instead of inside 
 
   function handleAddExp() {
-    addExperience(experience.length);
+    addExperience();
     setExpList(experience);
     console.log(experience)
   }
 
-  function handleRemoveExp(exp) {
-    let newExp = removeExperience(exp);
-    setExpList(newExp);
+  function handleRemoveExp(index) {
+    console.log(index);
+    removeExperience(index);
+    setExpList(experience);
   }
 
   return (
     <div className='Experience'>
       {expList.map((exp) => (
         <InputModule
-          key={generateKey}
+          key={shortid.generate()}
           title='Experience'
           list={exp}
           rmvFxn={handleRemoveExp}

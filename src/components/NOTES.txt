@@ -1,7 +1,11 @@
 For next time:
 
-Update Lists with a GROUPNAME so that they can be filtered to remove
+FIGURE OUT IF I CAN REMOVE ARRAYS FROM LISTS. Use group instead. Easy to filter.
 
-Fix handleRemoveExp function and corresponding functions
+handleRemove is working but will not work after the above is done.
+
+Also I have no idea why handleRemove is deleting a section.
+
+I don't think I am passing it a key??
 
 Use Experience logic to update Education

@@ -41,7 +41,8 @@ export let experience = [];
 addExperience(0);
 
 // Function to add another Experience section to array
-export function addExperience(group) {
+export function addExperience() {
+  let group = experience.length;
   const newExp = [{
     group: group,
     id: '0',
@@ -49,22 +50,26 @@ export function addExperience(group) {
     data: '',
     type: 'text'
   }, {
-    id: 'EX'+id+'1',
+    group: group,
+    id: '1',
     field: 'Position Title',
     data: '',
     type: 'text'
   }, {
-    id: 'EX'+id+'2',
+    group: group,
+    id: '2',
     field: 'Job Description',
     data: '',
     type: 'text'
   }, {
-    id: 'EX'+id+'3',
+    group: group,
+    id: '3',
     field: 'Start Date',
     data: '',
     type: 'date'
   }, {
-    id: 'EX'+id+'4',
+    group: group,
+    id: '4',
     field: 'End Date',
     data: '',
     type: 'date'
@@ -75,8 +80,8 @@ export function addExperience(group) {
 }
 
 // Function to remove an Experience section from array
-export function removeExperience(exp) {
-  return experience.filter((obj) => obj !== exp)
+export function removeExperience(index) {
+  experience = experience.splice(index,1);
 }
 
 export let education = [];
