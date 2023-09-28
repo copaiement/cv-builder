@@ -1,18 +1,18 @@
-import { generateKey } from "./KeyGen"
 
-export function InputModule({ title, list, rmvFxn }) {
+export function InputModule({ id, title, list, rmvFxn }) {
   return (
     <div className='inputs'>
       <div className='inputHeader'>{title}</div>
       {list.map(item => (
         <Inputs
-          key={generateKey} 
+          key={item.id + item.group}
           name={item.field}
           value={item.value}
           type={item.type}
         />
       ))}
-      <RemoveButton 
+      <RemoveButton
+          id={id}
           rmvFxn={rmvFxn}
       />
     </div>
@@ -49,10 +49,10 @@ export function Buttons({ add, addFxn }) {
   )
 }
 
-function RemoveButton({ rmvFxn }) {
+function RemoveButton({ id, rmvFxn }) {
   return (
     <div className='removeBtn'>
-      <button onClick={rmvFxn}>Remove</button>
+      <button id={id} onClick={rmvFxn}>Remove</button>
     </div>
   )
 }

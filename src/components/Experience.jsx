@@ -1,42 +1,41 @@
 import { useState } from "react";
 import { InputModule, Buttons } from "./Components";
-import { experience, addExperience, removeExperience } from "./Data";
-import { generateKey } from "./KeyGen";
+import { addExperience, removeExperience } from "./Data";
 
+// set up experience array
+let experience = [];
+experience = addExperience(experience);
 
 export function Experience() {
+
+  // set state
   const [expList, setExpList] = useState(experience)
 
-  // move function to add a new list here
-  // Create Experience array
-
-  // change single InputModule call to a map function
-
-  // move buttons creation to after inputs instead of inside 
-
   function handleAddExp() {
-    addExperience();
-    setExpList(experience);
-    console.log(experience)
+    let newExp = addExperience(expList);
+    setExpList(newExp);
+    console.log(newExp)
   }
 
-  function handleRemoveExp(index) {
-    console.log(index);
-    removeExperience(index);
-    setExpList(experience);
+  function handleRemoveExp(event) {
+    let group = parseInt(event.target.id);
+    let newExp = removeExperience(expList, group);
+    setExpList(newExp);
+    console.log(newExp);
   }
 
   return (
     <div className='Experience'>
-      {expList.map((exp) => (
+      {expList.map((exp, index) => (
         <InputModule
-          key={shortid.generate()}
-          title='Experience'
+          key={index}
+          id={index}
+          title={'Experience' + index}
           list={exp}
           rmvFxn={handleRemoveExp}
         />
       ))}
-      <Buttons 
+      <Buttons
         add={true}
         addFxn={handleAddExp}
       />

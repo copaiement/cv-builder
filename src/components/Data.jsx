@@ -37,12 +37,11 @@ export const contact = [{
 ];
 
 
-export let experience = [];
-addExperience(0);
+//export let experience = [];
+//addExperience(experience);
 
 // Function to add another Experience section to array
-export function addExperience() {
-  let group = experience.length;
+export function addExperience(expArr, group = 0) {
   const newExp = [{
     group: group,
     id: '0',
@@ -76,12 +75,14 @@ export function addExperience() {
   }];
   
   // use spread instead of push to trigger repaint
-  experience = [...experience, newExp];
+  return [...expArr, newExp];
 }
 
 // Function to remove an Experience section from array
-export function removeExperience(index) {
-  experience = experience.splice(index,1);
+export function removeExperience(expArr, index) {
+  const left = expArr.slice(0, index);
+  const right = expArr.slice((index + 1));
+  return [...left, ...right];
 }
 
 export let education = [];
