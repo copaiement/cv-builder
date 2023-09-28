@@ -1,14 +1,16 @@
 
-export function InputModule({ id, title, list, rmvFxn }) {
+export function InputModule({ id, title, list, handleChange, rmvFxn }) {
   return (
     <div className='inputs'>
       <div className='inputHeader'>{title}</div>
       {list.map(item => (
         <Inputs
           key={item.id + item.group}
+          id={'g'+item.group+'i'+item.id}
           name={item.field}
           value={item.value}
           type={item.type}
+          handleChange = {handleChange}
         />
       ))}
       <RemoveButton
@@ -19,11 +21,12 @@ export function InputModule({ id, title, list, rmvFxn }) {
   )
 }
 
-function Inputs({ name, value, type, handleChange }) {
+function Inputs({ id, name, value, type, handleChange }) {
   return (
     <label>
       {name}
       <input
+        id={id}
         value={value}
         onChange={handleChange}
         type={type}

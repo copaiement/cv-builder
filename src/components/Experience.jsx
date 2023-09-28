@@ -12,16 +12,33 @@ export function Experience() {
   const [expList, setExpList] = useState(experience)
 
   function handleAddExp() {
-    let newExp = addExperience(expList);
+    let newExp = addExperience(expList, expList.length);
     setExpList(newExp);
     console.log(newExp)
   }
 
-  function handleRemoveExp(event) {
-    let group = parseInt(event.target.id);
+  function handleRemoveExp(e) {
+    let group = parseInt(e.target.id);
     let newExp = removeExperience(expList, group);
     setExpList(newExp);
     console.log(newExp);
+  }
+
+  function handleChange(e) {
+    console.log(expList)
+    let code = e.target.id;
+    let group = code.slice(code.indexOf('g') + 1, code.indexOf('i'))
+    let id = `${code.slice(code.indexOf('i') + 1)}`;
+    setExpList(...expList, expList[group].map(index => {
+      if (index.id === id) {
+        console.log('HII')
+        return { ...index, data: e.target.value }
+      } else {
+        console.log('yooo')
+        return index;
+      }
+    }))
+    console.log(expList)
   }
 
   return (
@@ -32,6 +49,7 @@ export function Experience() {
           id={index}
           title={'Experience' + index}
           list={exp}
+          handleChange={handleChange}
           rmvFxn={handleRemoveExp}
         />
       ))}
