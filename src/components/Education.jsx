@@ -1,16 +1,3 @@
-import { education } from "./Data"
-import { InputModule } from "./Components"
-
-export function Education() {
-  return (
-    <InputModule 
-      title='Education'
-      list={education}
-      add={true}
-    />
-  )
-}
-
 // TO DO:
 // Make addExperience and removeExperience generic functions
 // Restructure Education Data to look like Experience
@@ -18,59 +5,59 @@ export function Education() {
 
 import { useState } from "react";
 import { InputModule, Buttons } from "./Components";
-import { addExperience, removeExperience } from "./Data";
+import { addEducation, removeItem } from "./Data";
 
 // set up experience array
-let experience = [];
-experience = addExperience(experience);
+let education = [];
+education = addEducation(education);
 
-export function Experience() {
+export function Education() {
 
   // set state
-  const [expList, setExpList] = useState(experience)
+  const [eduList, setEduList] = useState(education)
 
-  function handleAddExp() {
-    setExpList(addExperience(expList, expList.length));
+  function handleAddEdu() {
+    setEduList(addEducation(eduList, eduList.length));
   }
 
-  function handleRemoveExp(e) {
+  function handleRemoveEdu(e) {
     let group = parseInt(e.target.id);
-    setExpList(removeExperience(expList, group));
+    setEduList(removeItem(eduList, group));
   }
 
   function handleChange(e) {
-    console.log(expList)
+    console.log(eduList)
     let code = e.target.id;
     console.log(code);
     let group = code.slice(code.indexOf('g') + 1, code.indexOf('i'))
     let id = `${code.slice(code.indexOf('i') + 1)}`;
-    let left = expList.slice(0, group);
-    let right = expList.slice((group + 1));
-    setExpList([...left, expList[group].map(index => {
+    let left = eduList.slice(0, group);
+    let right = eduList.slice((group + 1));
+    setEduList([...left, eduList[group].map(index => {
       if (index.id === id) {
         return { ...index, data: e.target.value }
       } else {
         return index;
       }
     }), ...right])
-    console.log(expList)
+    console.log(eduList)
   }
 
   return (
-    <div className='Experience'>
-      {expList.map((exp, index) => (
+    <div className='Education'>
+      {eduList.map((edu, index) => (
         <InputModule
           key={index}
           id={index}
-          title={'Experience' + index}
-          list={exp}
+          title={'Education' + index}
+          list={edu}
           handleChange={handleChange}
-          rmvFxn={handleRemoveExp}
+          rmvFxn={handleRemoveEdu}
         />
       ))}
       <Buttons
         add={true}
-        addFxn={handleAddExp}
+        addFxn={handleAddEdu}
       />
     </div>
   )

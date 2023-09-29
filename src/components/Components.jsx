@@ -1,4 +1,4 @@
-
+// BUILD FUNCTIONS
 export function InputModule({ id, title, list, handleChange, rmvFxn }) {
   return (
     <div className='inputs'>
@@ -59,5 +59,7 @@ function RemoveButton({ id, rmvFxn }) {
     </div>
   )
 }
+
+
 
 

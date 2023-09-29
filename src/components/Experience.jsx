@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputModule, Buttons } from "./Components";
-import { addExperience, removeExperience } from "./Data";
+import { addExperience, removeItem } from "./Data";
 
 // set up experience array
 let experience = [];
@@ -17,7 +17,7 @@ export function Experience() {
 
   function handleRemoveExp(e) {
     let group = parseInt(e.target.id);
-    setExpList(removeExperience(expList, group));
+    setExpList(removeItem(expList, group));
   }
 
   function handleChange(e) {
