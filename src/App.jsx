@@ -32,6 +32,8 @@ function App() {
 
   function handleExpChange(e) {
     let code = e.target.id;
+    console.log(code);
+    console.log(expList);
     let group = code.slice(code.indexOf('g') + 1, code.indexOf('i'))
     let id = `${code.slice(code.indexOf('i') + 1)}`;
     let left = expList.slice(0, group);

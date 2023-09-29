@@ -55,11 +55,13 @@ export function addEducation(eduArr, group = 0) {
     data: '',
     type: 'text'
   }, {
+    group: group,
     id: '1',
     field: 'Degree',
     data: '',
     type: 'text'
   }, {
+    group: group,
     id: '2',
     field: 'Graduated',
     data: '',
