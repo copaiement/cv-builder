@@ -1,49 +1,23 @@
-import { InputModule } from "./Components";
+import { InputModule, OutputModule } from "./Components";
 
-const contact = [{
-  id: 'CO00',
-  field: 'Firstname',
-  data: '',
-  type: 'text'
-}, {
-  id: 'CO01',
-  field: 'Lastname',
-  data: '',
-  type: 'text'
-}, {
-  id: 'CO02',
-  field: 'Title',
-  data: '',
-  type: 'text'
-}, {
-  id: 'CO03',
-  field: 'Headline',
-  data: '',
-  type: 'paragraph'
-}, {
-  id: 'CO04',
-  field: 'Location',
-  data: '',
-  type: 'text'
-}, {
-  id: 'CO05',
-  field: 'E-mail',
-  data: '',
-  type: 'email'
-}, {
-  id: 'CO06',
-  field: 'Phone',
-  data: '',
-  type: 'tel'
-}
-];
-
-export function Contact() {
+export function ContactInput({ list, handleContChange }) {
   return (
-    <InputModule 
-      title='Contact Info'
+    <div className='Contact'>
+      <InputModule 
+        title='Contact Info'
+        list={list}
+        add={false}
+        handleChange={handleContChange}
+      />
+    </div>
+  )
+}
+
+export function ContactOutput({ contact }) {
+  return (
+    <OutputModule
+      title={'Contact Info'}
       list={contact}
-      add={false}
     />
   )
 }

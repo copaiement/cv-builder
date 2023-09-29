@@ -1,3 +1,75 @@
+// ARRAY SETUPS
+export function getContact() {
+  const newCont = [{  
+    group: '0',
+    id: '0',
+    field: 'Firstname',
+    data: '',
+    type: 'text'
+  }, {
+    group: '1',
+    id: '1',
+    field: 'Lastname',
+    data: '',
+    type: 'text'
+  }, {
+    group: '2',
+    id: '2',
+    field: 'Title',
+    data: '',
+    type: 'text'
+  }, {
+    group: '3',
+    id: '3',
+    field: 'Headline',
+    data: '',
+    type: 'paragraph'
+  }, {
+    group: '4',
+    id: '4',
+    field: 'Location',
+    data: '',
+    type: 'text'
+  }, {
+    group: '5',
+    id: '5',
+    field: 'E-mail',
+    data: '',
+    type: 'email'
+  }, {
+    group: '6',
+    id: '6',
+    field: 'Phone',
+    data: '',
+    type: 'tel'
+  }];
+  return newCont;
+}
+
+// Function to add another Education section to array
+export function addEducation(eduArr, group = 0) {
+  const newEdu = [{
+    group: group,
+    id: '0',
+    field: 'School Name',
+    data: '',
+    type: 'text'
+  }, {
+    id: '1',
+    field: 'Degree',
+    data: '',
+    type: 'text'
+  }, {
+    id: '2',
+    field: 'Graduated',
+    data: '',
+    type: 'month'
+  }];
+  
+  // use spread instead of push to trigger repaint
+  return [...eduArr, newEdu];
+}
+
 // Function to add another Experience section to array
 export function addExperience(expArr, group = 0) {
   const newExp = [{
@@ -43,27 +115,4 @@ export function removeItem(arr, index) {
   return [...left, ...right];
 }
 
-// Function to add another Education section to array
-export function addEducation(eduArr, group = 0) {
-  const newEdu = [{
-    group: group,
-    id: '0',
-    field: 'School Name',
-    data: '',
-    type: 'text'
-  }, {
-    id: '1',
-    field: 'Degree',
-    data: '',
-    type: 'text'
-  }, {
-    id: '2',
-    field: 'Graduated',
-    data: '',
-    type: 'month'
-  }];
-  
-  // use spread instead of push to trigger repaint
-  return [...eduArr, newEdu];
-}
 
