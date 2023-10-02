@@ -52,7 +52,7 @@ export function addEducation(eduArr, group = 0) {
     group: group,
     id: '0',
     field: 'School Name',
-    data: '',
+    data: 'test',
     type: 'text'
   }, {
     group: group,

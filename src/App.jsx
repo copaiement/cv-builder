@@ -53,7 +53,14 @@ function App() {
 
   function handleRemoveEdu(e) {
     let group = parseInt(e.target.id);
-    setEduList(removeItem(eduList, group));
+    let newEdu = removeItem(eduList, group);
+    console.log(newEdu);
+    // re-index the list
+    let remap = newEdu.map((item, index) => {
+      return item.map(edu => {return {...edu, group: index}});
+    })
+    console.log(remap);
+    setEduList(remap);
   }
 
   function handleEduChange(e) {

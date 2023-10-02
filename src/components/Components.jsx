@@ -9,7 +9,7 @@ export function InputModule({ id, title, list, handleChange, rmvFxn }) {
             key={item.id + item.group}
             id={'g'+item.group+'i'+item.id}
             name={item.field}
-            value={item.value}
+            value={item.data}
             type={item.type}
             handleChange = {handleChange}
           />
@@ -30,7 +30,7 @@ export function InputModule({ id, title, list, handleChange, rmvFxn }) {
           key={item.id + item.group}
           id={'g'+item.group+'i'+item.id}
           name={item.field}
-          value={item.value}
+          value={item.data}
           type={item.type}
           onChange = {handleChange}
         />
@@ -50,7 +50,7 @@ export function Buttons({ addFxn }) {
 }
 
 export function SubmitButton() {
-  
+
 }
 
 export function OutputModule({title, list}) {
@@ -71,12 +71,12 @@ export function OutputModule({title, list}) {
 }
 
 // Helper functions
-function Inputs({ id, name, value, type, handleChange }) {
+function Inputs({ id, name, data, type, handleChange }) {
   return (
     <label>{name}
       <input
         id={id}
-        value={value}
+        value={data}
         type={type}
         onChange={handleChange}
       />
