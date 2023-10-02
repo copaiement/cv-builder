@@ -20,12 +20,12 @@ export function ExperienceInput({ list, handleExpChange, handleRemoveExp, handle
   )
 }
 
-export function ExperienceOutput({ list, index }) {
+export function ExperienceOutput({ list }) {
   return (
     <div>
-      {list.map(item => (
+      {list.map((item, index) => (
         <OutputModule
-        key={index}
+        key={'out' + index}
         title={'Education'}
         list={item}
         />

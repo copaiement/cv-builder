@@ -20,12 +20,12 @@ export function EducationInput({ list, handleEduChange, handleRemoveEdu, handleA
   )
 }
 
-export function EducationOutput({ list, index }) {
+export function EducationOutput({ list }) {
   return (
     <div>
-      {list.map(item => (
+      {list.map((item, index) => (
         <OutputModule
-        key={index}
+        key={'out' + index}
         title={'Education'}
         list={item}
         />

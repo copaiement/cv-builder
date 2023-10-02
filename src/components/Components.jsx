@@ -71,7 +71,7 @@ export function OutputModule({title, list}) {
       <div className='outputHeader'>{title}</div>
       {list.map(item => (
         <Outputs
-          key={item.id + item.group}
+          key={'out' + item.id + item.group}
           id={'g'+item.group+'i'+item.id}
           name={item.field}
           value={item.data}
