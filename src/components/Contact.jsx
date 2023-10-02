@@ -13,11 +13,11 @@ export function ContactInput({ list, handleContChange }) {
   )
 }
 
-export function ContactOutput({ contact }) {
+export function ContactOutput({ list }) {
   return (
     <OutputModule
       title={'Contact Info'}
-      list={contact}
+      list={list}
     />
   )
 }

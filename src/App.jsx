@@ -3,22 +3,24 @@ import { useState } from 'react';
 import { ContactInput, ContactOutput } from './components/Contact';
 import { ExperienceInput, ExperienceOutput } from './components/Experience';
 import { EducationInput, EducationOutput } from './components/Education';
-import { SubmitButton } from './components/Components'
+import { SubmitButton, ResetButton } from './components/Components'
 import { getContact, addEducation, addExperience, removeItem } from './components/Data';
 
 // set up inital data arrays
-let education = [];
-education = addEducation(education);
-let experience = [];
-experience = addExperience(experience);
 let contact = [];
 contact = getContact();
+let experience = [];
+experience = addExperience(experience);
+let education = [];
+education = addEducation(education);
+let outputs = [contact, experience, education];
 
 function App() {
   // set states
   const [contList, setContList] = useState(contact);
   const [expList, setExpList] = useState(experience);
   const [eduList, setEduList] = useState(education);
+  const [outputList, setOutputList] = useState(outputs);
 
   // data functions
   function handleContChange(e) {
@@ -90,6 +92,18 @@ function App() {
       }
     }), ...right])
   }
+
+  function handleSubmit() {
+    setOutputList([contList, expList, eduList]);
+  }
+
+  function handleReset() {
+    setContList(contact);
+    setExpList(experience);
+    setEduList(education);
+    setOutputList([contact, experience, education]);
+  }
+
   return (
     <div className='app'>
       <div className='inputForm'>
@@ -109,17 +123,24 @@ function App() {
           handleRemoveEdu={handleRemoveEdu}
           handleAddEdu={handleAddEdu}
         />
-        <SubmitButton />
+        <SubmitButton 
+          handleSubmit={handleSubmit}
+        />
+        <ResetButton
+          handleReset={handleReset}
+        />
       </div>
-      {/* <div className='output'>
-        <ContactOutput />
+      <div className='outputs'>
+        <ContactOutput 
+          list={outputList[0]}
+        />
         <ExperienceOutput 
-          list={expList}
+          list={outputList[1]}
         />
         <EducationOutput 
-          list={eduList}
+          list={outputList[2]}
         />
-      </div> */}
+      </div>
     </div>
   )
 }

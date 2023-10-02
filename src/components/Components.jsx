@@ -49,8 +49,20 @@ export function Buttons({ addFxn }) {
   }
 }
 
-export function SubmitButton() {
+export function SubmitButton({ handleSubmit }) {
+  return (
+    <div className='submitBtn'>
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+  )
+}
 
+export function ResetButton({ handleReset }) {
+  return (
+    <div className='resetBtn'>
+      <button onClick={handleReset}>Reset</button>
+    </div>
+  )
 }
 
 export function OutputModule({title, list}) {
