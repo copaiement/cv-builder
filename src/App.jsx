@@ -27,7 +27,12 @@ function App() {
 
   function handleRemoveExp(e) {
     let group = parseInt(e.target.id);
-    setExpList(removeItem(expList, group));
+    let newExp = removeItem(expList, group);
+    // re-index the list
+    let remap = newExp.map((item, index) => {
+      return item.map(exp => {return {...exp, group: index}});
+    });
+    setExpList(remap);
   }
 
   function handleExpChange(e) {
@@ -54,12 +59,10 @@ function App() {
   function handleRemoveEdu(e) {
     let group = parseInt(e.target.id);
     let newEdu = removeItem(eduList, group);
-    console.log(newEdu);
     // re-index the list
     let remap = newEdu.map((item, index) => {
       return item.map(edu => {return {...edu, group: index}});
-    })
-    console.log(remap);
+    });
     setEduList(remap);
   }
 
