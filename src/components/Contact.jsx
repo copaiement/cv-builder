@@ -2,7 +2,7 @@ import { InputModule, OutputModule } from "./Components";
 
 export function ContactInput({ list, handleContChange }) {
   return (
-    <div className='Contact'>
+    <div className='contact inputSection'>
       <InputModule 
         title='Contact Info'
         list={list}
@@ -15,9 +15,11 @@ export function ContactInput({ list, handleContChange }) {
 
 export function ContactOutput({ list }) {
   return (
-    <OutputModule
-      title={'Contact Info'}
-      list={list}
-    />
+    <div className='contactOutput'>
+      <OutputModule
+        title={'Contact Info'}
+        list={list}
+      />
+    </div>
   )
 }

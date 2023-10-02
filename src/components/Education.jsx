@@ -2,7 +2,7 @@ import { InputModule, OutputModule, Buttons } from "./Components";
 
 export function EducationInput({ list, handleEduChange, handleRemoveEdu, handleAddEdu }) {
   return (
-    <div className='Education'>
+    <div className='education inputSection'>
       {list.map((edu, index) => (
         <InputModule
           key={index}
@@ -22,7 +22,7 @@ export function EducationInput({ list, handleEduChange, handleRemoveEdu, handleA
 
 export function EducationOutput({ list }) {
   return (
-    <div>
+    <div className='educationOutput'>
       {list.map((item, index) => (
         <OutputModule
         key={'out' + index}
