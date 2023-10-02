@@ -7,37 +7,37 @@ export function getContact() {
     data: '',
     type: 'text'
   }, {
-    group: '1',
+    group: '0',
     id: '1',
     field: 'Lastname',
     data: '',
     type: 'text'
   }, {
-    group: '2',
+    group: '0',
     id: '2',
     field: 'Title',
     data: '',
     type: 'text'
   }, {
-    group: '3',
+    group: '0',
     id: '3',
     field: 'Headline',
     data: '',
     type: 'paragraph'
   }, {
-    group: '4',
+    group: '0',
     id: '4',
     field: 'Location',
     data: '',
     type: 'text'
   }, {
-    group: '5',
+    group: '0',
     id: '5',
     field: 'E-mail',
     data: '',
     type: 'email'
   }, {
-    group: '6',
+    group: '0',
     id: '6',
     field: 'Phone',
     data: '',
@@ -52,7 +52,7 @@ export function addEducation(eduArr, group = 0) {
     group: group,
     id: '0',
     field: 'School Name',
-    data: 'test',
+    data: '',
     type: 'text'
   }, {
     group: group,

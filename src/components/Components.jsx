@@ -9,7 +9,7 @@ export function InputModule({ id, title, list, handleChange, rmvFxn }) {
             key={item.id + item.group}
             id={'g'+item.group+'i'+item.id}
             name={item.field}
-            value={item.data}
+            data={item.data}
             type={item.type}
             handleChange = {handleChange}
           />
@@ -30,9 +30,9 @@ export function InputModule({ id, title, list, handleChange, rmvFxn }) {
           key={item.id + item.group}
           id={'g'+item.group+'i'+item.id}
           name={item.field}
-          value={item.data}
+          data={item.data}
           type={item.type}
-          onChange = {handleChange}
+          handleChange = {handleChange}
         />
       ))}
     </div>

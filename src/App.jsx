@@ -21,6 +21,18 @@ function App() {
   const [eduList, setEduList] = useState(education);
 
   // data functions
+  function handleContChange(e) {
+    let code = e.target.id;
+    let id = `${code.slice(code.indexOf('i') + 1)}`;
+    setContList(contList.map(item => {
+      if (item.id === id) {
+        return {...item, data: e.target.value}
+      } else {
+        return item;
+      }
+    }));
+  }
+
   function handleAddExp() {
     setExpList(addExperience(expList, expList.length));
   }
@@ -37,17 +49,15 @@ function App() {
 
   function handleExpChange(e) {
     let code = e.target.id;
-    console.log(code);
-    console.log(expList);
     let group = code.slice(code.indexOf('g') + 1, code.indexOf('i'))
     let id = `${code.slice(code.indexOf('i') + 1)}`;
     let left = expList.slice(0, group);
     let right = expList.slice((group + 1));
-    setExpList([...left, expList[group].map(index => {
-      if (index.id === id) {
-        return { ...index, data: e.target.value }
+    setExpList([...left, expList[group].map(item => {
+      if (item.id === id) {
+        return { ...item, data: e.target.value }
       } else {
-        return index;
+        return item;
       }
     }), ...right])
   }
@@ -68,17 +78,15 @@ function App() {
 
   function handleEduChange(e) {
     let code = e.target.id;
-    console.log(code);
-    console.log(eduList);
     let group = code.slice(code.indexOf('g') + 1, code.indexOf('i'))
     let id = `${code.slice(code.indexOf('i') + 1)}`;
     let left = eduList.slice(0, group);
     let right = eduList.slice((group + 1));
-    setEduList([...left, eduList[group].map(index => {
-      if (index.id === id) {
-        return { ...index, data: e.target.value }
+    setEduList([...left, eduList[group].map(item => {
+      if (item.id === id) {
+        return { ...item, data: e.target.value }
       } else {
-        return index;
+        return item;
       }
     }), ...right])
   }
@@ -87,6 +95,7 @@ function App() {
       <div className='inputForm'>
         <ContactInput 
           list={contList}
+          handleContChange={handleContChange}
         />
         <ExperienceInput 
           list={expList}
