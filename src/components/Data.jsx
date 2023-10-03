@@ -97,13 +97,13 @@ export function addExperience(expArr, group = 0) {
     id: '3',
     field: 'Start Date',
     data: '',
-    type: 'date'
+    type: 'month'
   }, {
     group: group,
     id: '4',
     field: 'End Date',
     data: '',
-    type: 'date'
+    type: 'month'
   }];
   
   // use spread instead of push to trigger repaint

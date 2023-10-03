@@ -99,8 +99,8 @@ function Inputs({ id, name, data, type, handleChange }) {
 function Outputs({ id, name, value, type}) {
   return (
     <div className='outputField'>
-      <div className='name'>{name}</div>
-      <div className='data'>{value}</div>
+      <div className='outputName'>{name}</div>
+      <div className='outputData'>{value}</div>
     </div>
   )
 }

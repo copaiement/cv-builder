@@ -67,6 +67,11 @@ body {
   gap: 10px;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+}
+
 .collapse {
   transform: translateX(-1000px);
 }
@@ -93,6 +98,20 @@ body {
   justify-content: space-between;
 }
 
+.leftOutputs {
+  background-color: rgb(179, 179, 252);
+  width: 30%;
+  height: 100%;
+  padding: 12px;
+}
+
+.rightOutputs {
+  background-color: rgb(207, 207, 207);
+  width: 70%;
+  height: 100%;
+  padding: 12px;
+}
+
 /* Resume Styles */
 
 .experienceOutput > .outputContainer,
@@ -102,7 +121,6 @@ body {
 }
 
 .outputHeader {
-  align-self: center;
   font-weight: bold;
 }
 
