@@ -13,6 +13,17 @@ export function ContactInput({ list, handleContChange }) {
   )
 }
 
+export function NameOutput({ list }) {
+  return (
+    <div className='nameOutput'>
+      <OutputModule
+        title={'Contact Info'}
+        list={list}
+      />
+    </div>
+  )
+}
+
 export function ContactOutput({ list }) {
   return (
     <div className='contactOutput'>

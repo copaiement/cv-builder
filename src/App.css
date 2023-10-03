@@ -90,7 +90,6 @@ body {
   aspect-ratio: .77;
 
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -104,6 +103,7 @@ body {
 
 .outputHeader {
   align-self: center;
+  font-weight: bold;
 }
 
 .contactOutput {

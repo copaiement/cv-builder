@@ -26,7 +26,7 @@ export function ExperienceOutput({ list }) {
       {list.map((item, index) => (
         <OutputModule
         key={'out' + index}
-        title={'Education'}
+        title={'Experience'}
         list={item}
         />
       ))}

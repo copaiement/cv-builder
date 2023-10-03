@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react';
-import { ContactInput, ContactOutput } from './components/Contact';
+import { ContactInput, ContactOutput, NameOutput } from './components/Contact';
 import { ExperienceInput, ExperienceOutput } from './components/Experience';
 import { EducationInput, EducationOutput } from './components/Education';
 import { SubmitButton, ResetButton } from './components/Components'
@@ -143,15 +143,22 @@ function App() {
       </div>
       <div className='outputsPage'>
         <div className='outputsContainer'>
-          <ContactOutput
-            list={outputList[0]}
-          />
-          <ExperienceOutput
-            list={outputList[1]}
-          />
-          <EducationOutput
-            list={outputList[2]}
-          />
+          <div className='leftOutputs'>
+            <ContactOutput
+              list={outputList[0].filter(item => item.id >= 4)}
+            />
+            <EducationOutput
+              list={outputList[2]}
+            />
+          </div>
+          <div className='rightOutputs'>
+            <NameOutput
+              list={outputList[0].filter(item => item.id < 4)}
+            />
+            <ExperienceOutput
+              list={outputList[1]}
+            />
+          </div>
         </div>
       </div>
     </div>
