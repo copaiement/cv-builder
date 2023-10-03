@@ -5,6 +5,7 @@ import { ExperienceInput, ExperienceOutput } from './components/Experience';
 import { EducationInput, EducationOutput } from './components/Education';
 import { SubmitButton, ResetButton } from './components/Components'
 import { getContact, addEducation, addExperience, removeItem } from './components/Data';
+import { toggleInput } from './components/StyleFxns';
 
 // set up inital data arrays
 let contact = [];
@@ -95,6 +96,7 @@ function App() {
 
   function handleSubmit() {
     setOutputList([contList, expList, eduList]);
+    toggleInput();
   }
 
   function handleReset() {
@@ -106,6 +108,15 @@ function App() {
 
   return (
     <div className='app'>
+      <div 
+        className='menuBtnContainer'
+        onClick={toggleInput}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <title>arrow-left-circle</title>
+          <path className='menuBtn' d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" />
+        </svg>
+      </div>
       <div className='inputForm'>
         <ContactInput 
           list={contList}
