@@ -141,16 +141,18 @@ function App() {
           handleReset={handleReset}
         />
       </div>
-      <div className='outputs'>
-        <ContactOutput 
-          list={outputList[0]}
-        />
-        <ExperienceOutput 
-          list={outputList[1]}
-        />
-        <EducationOutput 
-          list={outputList[2]}
-        />
+      <div className='outputsPage'>
+        <div className='outputsContainer'>
+          <ContactOutput
+            list={outputList[0]}
+          />
+          <ExperienceOutput
+            list={outputList[1]}
+          />
+          <EducationOutput
+            list={outputList[2]}
+          />
+        </div>
       </div>
     </div>
   )
