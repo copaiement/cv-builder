@@ -23,10 +23,10 @@ export function EducationInput({ list, handleEduChange, handleRemoveEdu, handleA
 export function EducationOutput({ list }) {
   return (
     <div className='educationOutput'>
+      <div className='outputHeader'>Education</div>
       {list.map((item, index) => (
         <OutputModule
         key={'out' + index}
-        title={'Education'}
         list={item}
         />
       ))}

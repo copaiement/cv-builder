@@ -66,10 +66,9 @@ function RemoveButton({ id, rmvFxn }) {
   )
 }
 
-export function OutputModule({title, list}) {
+export function OutputModule({ list }) {
   return (
     <div className='outputContainer'>
-      <div className='outputHeader'>{title}</div>
       {list.map(item => (
         <Outputs
           key={'out' + item.id + item.group}

@@ -26,8 +26,8 @@ export function NameOutput({ list }) {
 export function ContactOutput({ list }) {
   return (
     <div className='contactOutput'>
+      <div className='outputHeader'>Contact Info</div>
       <OutputModule
-        title={'Contact Info'}
         list={list}
       />
     </div>

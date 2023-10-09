@@ -23,10 +23,10 @@ export function ExperienceInput({ list, handleExpChange, handleRemoveExp, handle
 export function ExperienceOutput({ list }) {
   return (
     <div className='experienceOutput'>
+      <div className='outputHeader'>Experience</div>
       {list.map((item, index) => (
         <OutputModule
         key={'out' + index}
-        title={'Experience'}
         list={item}
         />
       ))}

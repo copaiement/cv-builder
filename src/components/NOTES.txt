@@ -1,7 +1,0 @@
-For next time:
-
-Group needs to update (in Edu, maybe Exp) when item is deleted or 
-indexing will not work.
-
-Issues when i delete the first group, then add text to inputs.
-
