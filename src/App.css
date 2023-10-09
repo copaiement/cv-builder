@@ -10,10 +10,6 @@ body {
   box-sizing: border-box;
 }
 
-/* .app {
-  display: flex;
-} */
-
 .menuBtnContainer {
   position: absolute;
   top: 0;
@@ -47,20 +43,26 @@ body {
   left: 0;
   width: 50%;
   height: 100%;
-  gap: 20px;
   transition: all .5s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .inputSection {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .inputHeader {
   font-weight: bold;
+  border-bottom: 2px solid black;
+  width: 100%;
 }
 
 .inputs {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -74,6 +76,44 @@ label {
 
 .collapse {
   transform: translateX(-1000px);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #5ce40e;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.addBtn>button {
+  background-color: rgb(161, 201, 177);
+}
+
+.removeBtn>button {
+  background-color: rgb(229, 147, 147);
+}
+
+.submitReset {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.submitReset>button {
+  background-color: #646cff;
 }
 
 /* Resume Page Styles */
@@ -112,7 +152,30 @@ label {
   padding: 12px;
 }
 
-/* Resume Styles */
+/* Input Styles */
+
+input {
+  border: none;
+  padding: 8px;
+}
+
+input:focus {
+  background-color: lightblue;
+  border: 3px solid red;
+}
+
+textarea {
+  height: 60px;
+  width: 100%;
+  border: none;
+  resize: none;
+}
+
+
+/* Output Styles */
+.leftOutputs {
+
+}
 
 .experienceOutput > .outputContainer,
 .educationOutput > .outputContainer {
@@ -122,6 +185,19 @@ label {
 
 .outputHeader {
   font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.nameOutput>.outputContainer>.outputHeader {
+  border-bottom: none;
+}
+
+.outputName {
+  font-size: small;
+}
+
+.outputData {
+  font-size: large;
 }
 
 .contactOutput {
@@ -135,3 +211,16 @@ label {
 .educationOutput {
   background-color: rgb(201, 195, 189);
 }
+
+.name {
+  display: flex;
+}
+
+.firstname, .lastname {
+  font-size: x-large;
+}
+
+.firstname {
+  font-weight: lighter;
+}
+

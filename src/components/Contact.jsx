@@ -1,4 +1,4 @@
-import { InputModule, OutputModule } from "./Components";
+import { InputModule, OutputModule, NameOutputModule } from "./Components";
 
 export function ContactInput({ list, handleContChange }) {
   return (
@@ -16,7 +16,7 @@ export function ContactInput({ list, handleContChange }) {
 export function NameOutput({ list }) {
   return (
     <div className='nameOutput'>
-      <OutputModule
+      <NameOutputModule
         title={''}
         list={list}
       />

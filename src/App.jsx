@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ContactInput, ContactOutput, NameOutput } from './components/Contact';
 import { ExperienceInput, ExperienceOutput } from './components/Experience';
 import { EducationInput, EducationOutput } from './components/Education';
-import { SubmitButton, ResetButton } from './components/Components'
+import { SubmitReset } from './components/Components'
 import { getContact, addEducation, addExperience, removeItem } from './components/Data';
 import { toggleInput } from './components/StyleFxns';
 
@@ -96,6 +96,9 @@ function App() {
 
   function handleSubmit() {
     setOutputList([contList, expList, eduList]);
+    let test = outputList[0].filter(item => item.id >= 4);
+    console.log(test[1]);
+    
     toggleInput();
   }
 
@@ -134,10 +137,8 @@ function App() {
           handleRemoveEdu={handleRemoveEdu}
           handleAddEdu={handleAddEdu}
         />
-        <SubmitButton 
+        <SubmitReset
           handleSubmit={handleSubmit}
-        />
-        <ResetButton
           handleReset={handleReset}
         />
       </div>
