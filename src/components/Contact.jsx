@@ -17,7 +17,6 @@ export function NameOutput({ list }) {
   return (
     <div className='nameOutput'>
       <NameOutputModule
-        title={''}
         list={list}
       />
     </div>

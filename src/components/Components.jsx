@@ -83,26 +83,21 @@ export function OutputModule({title, list}) {
   )
 }
 
-export function NameOutputModule({title, list}) {
+export function NameOutputModule({ list }) {
   let firstname = list[0];
   let lastname = list[1];
-  list = list.slice(2);
+  let title = list[2];
+  let headline = list[3];
   return (
     <div className='outputContainer'>
-      <div className='outputHeader'>{title}</div>
       <div className='name'>
         <div className="firstname">{firstname.data}</div>
         <div className="lastname">{lastname.data}</div>
       </div>
-      {list.map(item => (
-        <Outputs
-          key={'out' + item.id + item.group}
-          id={'g'+item.group+'i'+item.id}
-          name={item.field}
-          value={item.data}
-          type={item.type}
-        />
-      ))}
+      <div className="personalInfo">
+        <div className="title">{title.data}</div>
+        <div className="headline">{headline.data}</div>
+      </div>
     </div>
   )
 }

@@ -96,9 +96,6 @@ function App() {
 
   function handleSubmit() {
     setOutputList([contList, expList, eduList]);
-    let test = outputList[0].filter(item => item.id >= 4);
-    console.log(test[1]);
-    
     toggleInput();
   }
 

@@ -10,6 +10,15 @@ body {
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: rgb(226, 137, 137);
+}
+
 .menuBtnContainer {
   position: absolute;
   top: 0;
@@ -47,6 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow-y: scroll;
 }
 
 .inputSection {
@@ -186,6 +196,7 @@ textarea {
 .outputHeader {
   font-weight: bold;
   border-bottom: 2px solid black;
+  margin-bottom: 8px;
 }
 
 .nameOutput>.outputContainer>.outputHeader {
@@ -200,27 +211,30 @@ textarea {
   font-size: large;
 }
 
-.contactOutput {
-  background-color: rgb(240, 233, 233);
-}
-
-.experienceOutput {
-  background-color: blanchedalmond;
-}
-
-.educationOutput {
-  background-color: rgb(201, 195, 189);
-}
-
 .name {
   display: flex;
 }
 
 .firstname, .lastname {
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 .firstname {
   font-weight: lighter;
 }
+
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.experienceOutput>.outputContainer>.outputField {
+  border-left: 1px solid black;
+  padding-left: 8px;
+}
+
 
