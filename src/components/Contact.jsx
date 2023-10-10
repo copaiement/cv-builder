@@ -3,8 +3,8 @@ import { InputModule, OutputModule, NameOutputModule } from "./Components";
 export function ContactInput({ list, handleContChange }) {
   return (
     <div className='contact inputSection'>
+      <div className='inputHeader'>Contact Info</div>
       <InputModule 
-        title='Contact Info'
         list={list}
         add={false}
         handleChange={handleContChange}

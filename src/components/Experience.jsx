@@ -3,11 +3,11 @@ import { InputModule, OutputModule, Buttons } from "./Components";
 export function ExperienceInput({ list, handleExpChange, handleRemoveExp, handleAddExp }) {
   return (
     <div className='experience inputSection'>
+      <div className='inputHeader'>Experience</div>
       {list.map((exp, index) => (
         <InputModule
           key={index}
           id={index}
-          title={'Experience'}
           list={exp}
           handleChange={handleExpChange}
           rmvFxn={handleRemoveExp}

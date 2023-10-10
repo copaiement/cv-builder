@@ -1,0 +1,7 @@
+need to add profile picture upload functions
+
+need to adjust text sizing with page size
+
+update style in inputs to look cooler
+
+add buttons to collapse input sections

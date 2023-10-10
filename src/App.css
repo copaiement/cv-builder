@@ -136,30 +136,27 @@ button:focus-visible {
 }
 
 .outputsContainer {
-  background-color: beige;
-  padding: 24px;
+  /* padding: 24px; */
   box-shadow: 0px 0px 10px rgb(190, 190, 190);
   max-width: 100%;
   max-height: 100%;
   /* Scale the page to fit 8.5 x 11 */
   aspect-ratio: .77;
-
   display: flex;
-  justify-content: space-between;
 }
 
 .leftOutputs {
   background-color: rgb(179, 179, 252);
   width: 30%;
   height: 100%;
-  padding: 12px;
+  padding: 20px;
 }
 
 .rightOutputs {
   background-color: rgb(207, 207, 207);
   width: 70%;
   height: 100%;
-  padding: 12px;
+  padding: 20px;
 }
 
 /* Input Styles */

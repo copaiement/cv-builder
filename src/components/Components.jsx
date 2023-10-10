@@ -1,9 +1,8 @@
 // BUILD FUNCTIONS
-export function InputModule({ id, title, list, handleChange, rmvFxn }) {
+export function InputModule({ id, list, handleChange, rmvFxn }) {
   if (rmvFxn) {
     return (
       <div className='inputs'>
-        <div className='inputHeader'>{title}</div>
         {list.map(item => (
           <Inputs
             key={item.id + item.group}
@@ -24,7 +23,6 @@ export function InputModule({ id, title, list, handleChange, rmvFxn }) {
 
   return (
     <div className='inputs'>
-      <div className='inputHeader'>{title}</div>
       {list.map(item => (
         <Inputs
           key={item.id + item.group}

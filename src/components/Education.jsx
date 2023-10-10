@@ -3,11 +3,11 @@ import { InputModule, OutputModule, Buttons } from "./Components";
 export function EducationInput({ list, handleEduChange, handleRemoveEdu, handleAddEdu }) {
   return (
     <div className='education inputSection'>
+      <div className='inputHeader'>Education</div>
       {list.map((edu, index) => (
         <InputModule
           key={index}
           id={index}
-          title={'Education'}
           list={edu}
           handleChange={handleEduChange}
           rmvFxn={handleRemoveEdu}
