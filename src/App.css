@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+:root {
+  font-size: min(2.25vh, 2.25vw);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -143,7 +147,6 @@ button:focus-visible {
   /* Scale the page to fit 8.5 x 11 */
   aspect-ratio: .77;
   display: flex;
-  font-size: 1em;
 }
 
 .leftOutputs {
@@ -184,7 +187,6 @@ textarea {
 .profilePicContainer {
   display: block;
   width: 100%;
-
   aspect-ratio: 1;
 }
 
@@ -213,11 +215,11 @@ textarea {
 }
 
 .outputName {
-  font-size: 1rem;
+  font-size: .75rem;
 }
 
 .outputData {
-  font-size: large;
+  font-size: 1rem;
 }
 
 .name {
@@ -225,7 +227,7 @@ textarea {
 }
 
 .firstname, .lastname {
-  font-size: xx-large;
+  font-size: 2rem;
 }
 
 .firstname {
