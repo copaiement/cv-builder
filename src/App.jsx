@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react';
+import { ProfilePicInput, ProfilePicOutput } from './components/ProfilePic';
 import { ContactInput, ContactOutput, NameOutput } from './components/Contact';
 import { ExperienceInput, ExperienceOutput } from './components/Experience';
 import { EducationInput, EducationOutput } from './components/Education';
@@ -22,6 +23,7 @@ function App() {
   const [expList, setExpList] = useState(experience);
   const [eduList, setEduList] = useState(education);
   const [outputList, setOutputList] = useState(outputs);
+  const [image, setImage] = useState();
 
   // data functions
   function handleContChange(e) {
@@ -95,7 +97,7 @@ function App() {
   }
 
   function handleSubmit() {
-    setOutputList([contList, expList, eduList]);
+    setOutputList([contList, expList, eduList, image]);
     toggleInput();
   }
 
@@ -103,7 +105,15 @@ function App() {
     setContList(contact);
     setExpList(experience);
     setEduList(education);
-    setOutputList([contact, experience, education]);
+    setImage();
+    setOutputList([contact, experience, education, ]);
+  }
+
+  //const [image, setImage] = useState();
+
+  function handleImage(e) {
+    let imgSrc = URL.createObjectURL(e.target.files[0]);
+    setImage(imgSrc);
   }
 
   return (
@@ -118,6 +128,9 @@ function App() {
         </svg>
       </div>
       <div className='inputForm'>
+        <ProfilePicInput
+          handleImage={handleImage}
+        />
         <ContactInput 
           list={contList}
           handleContChange={handleContChange}
@@ -142,6 +155,9 @@ function App() {
       <div className='outputsPage'>
         <div className='outputsContainer'>
           <div className='leftOutputs'>
+            <ProfilePicOutput
+              imageURL={outputList[3]}
+            />
             <ContactOutput
               list={outputList[0].filter(item => item.id >= 4)}
             />
